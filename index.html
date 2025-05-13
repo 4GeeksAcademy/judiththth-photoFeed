@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Photo Feed</title>
+  <title>Photo Feed Judith</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,36 +15,42 @@
 
 <body>
   <!--LOGO + CREAR POST + DROPDOWN-->
-  <nav class="navbar bg-body-tertiary px-3">
+  <nav class="navbar bg-body-tertiary">
 
-    <a class="navbar-brand" href="#">
-      <i class="fa-brands fa-instagram"></i>
-      <span>Instagram</span>
-    </a>
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand" href="#">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNewPost">Crear nuevo
-          post</button>
-      </li>
+      <div class="d-flex g-2">
 
-      <li class="nav-item dropdown ms-2">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-gear"></i>
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNewPost">
+          Crear nuevo post
         </button>
 
+
         <!--MENÚ DROPDOWN-->
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item">Perfil</a></li>
-          <li><a class="dropdown-item">Accesibilidad</a></li>
-          <li><a class="dropdown-item">Privacidad y Datos</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item text-danger">Cerrar sesión</a></li>
+        <div class="nav-item dropdown ms-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item">Perfil</a></li>
+            <li><a class="dropdown-item">Accesibilidad</a></li>
+            <li><a class="dropdown-item">Privacidad y Datos</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger">Cerrar sesión</a></li>
+          </ul>
+        </div>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <!--MODAL-->
     <div class="modal" id="modalNewPost" tabindex="-1">
@@ -56,7 +62,17 @@
           </div>
           <div class="modal-body">
             <p>Descripción:</p>
-            <textarea></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              placeholder="Escribe aquí la descripción."></textarea>
+
+            <button type="button" class="btn btn-light g-2 align-items-center">
+              <i class="fa-solid fa-camera fa-lg me-2 bg-light"></i> <!--CÁMARA ICONO-->
+            </button>
+            <button type="button" class="btn btn-light g-2">
+              <i class="fa-solid fa-location-dot fa-lg bg-light"></i> <!-- UBI ICONO-->
+            </button>
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -65,37 +81,104 @@
         </div>
       </div>
     </div>
+
   </nav>
 
+
   <!--TABS + JS BEHAVIOUR -->
+  <div class="container-fluid justify-content-end">
 
-  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" >
-    <li class="nav-item" role="presentation"> <!--TAB GRID-->
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
-        role="tab" aria-controls="home-tab-pane" aria-selected="true">
-        <i class="fa-solid fa-table-cells"></i>
-      </button>
-    </li>
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation"> <!--TAB GRID-->
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">
+          <i class="fa-solid fa-table-cells"></i>
+        </button>
+      </li>
 
-    <li class="nav-item" role="presentation"> <!--TAB 1 COLUMNA FOTOS-->
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
-        role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-        <i class="fa-solid fa-square"></i>
-      </button>
-    </li>
-  </ul>
+      <li class="nav-item" role="presentation"> <!--TAB 1 COLUMNA FOTOS-->
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+          <i class="fa-solid fa-square"></i>
+        </button>
+      </li>
+    </ul>
 
-  <div class="tab-content" id="myTabContent">
-    <!--GRID MUCHAS FOTOS-->
-    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-      ...</div>
+    <div class="tab-content" id="myTabContent">
+      <!--GRID MUCHAS FOTOS-->
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
-    <!--1 COLUMNA DE FOTOS-->
-    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-2">
+          <!--IMAGEN 1-->
+          <div class="col">
+            <img
+              src="https://images.unsplash.com/photo-1504600770771-fb03a6961d33?q=80&w=2082&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="img-fluid">
+
+          </div>
+
+          <!--IMAGEN 2-->
+          <div class="col">
+            <img
+              src="https://images.unsplash.com/photo-1610177498573-78deaa4a797b?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="img-fluid">
+          </div>
+
+          <!--IMAGEN 3-->
+          <div class="col">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1661331864386-24337aa54ac1?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="img-fluid">
+          </div>
+
+          <!--IMAGEN 4-->
+          <div class="col">
+            <img
+              src="https://images.unsplash.com/photo-1584404268984-89c43e841646?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="img-fluid">
+          </div>
+
+          <!--IMAGEN 5-->
+          <div class="col">
+            <img src="https://i.etsystatic.com/7478004/r/il/605bc0/449513722/il_570xN.449513722_etey.jpg"
+              class="img-fluid">
+          </div>
+
+          <!--IMAGEN 6-->
+          <div class="col">
+            <img
+              src="https://images.unsplash.com/photo-1668329992654-8cd596d5d682?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="img-fluid">
+          </div>
+
+
+        </div>
+      </div>
+
+      <!--1 COLUMNA DE FOTOS-->
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="row justify-content-center">
+          <div class="container my-4">
+
+            <!--IMAGEN 1-->
+            <div class="card m-4 p-0" >
+              <div class="card-body row">
+                <h5 class="card-title">Escape the city</h5>
+                <img
+                  src="https://images.unsplash.com/photo-1504600770771-fb03a6961d33?q=80&w=2082&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid">
+                <p>23 Me gusta</p>
+                <p>Cuadrado 3
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
