@@ -14,30 +14,54 @@
 </head>
 
 <body>
-  <!--LOGO + CREAR POST + DROPDOWN-->
+  <!--NAVBAR: LOGO + CREAR POST + DROPDOWN-->
   <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
 
-    <div class="container-fluid d-flex justify-content-between">
-      <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#">
         <i class="fa-brands fa-instagram"></i>
         <span>Instagram</span>
       </a>
 
-      <div class="d-flex g-2">
+      <!--HAMBURGUESA SOLO MÓVIL-->
+      <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <!--CONTENIDO COLLAPSE-->
+      <div class="collapse navbar-collapse d-md-none" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mb-2">
+            <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#modalNewPost">
+              Crear nuevo post
+            </button>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item">Perfil</a></li>
+              <li><a class="dropdown-item">Accesibilidad</a></li>
+              <li><a class="dropdown-item">Privacidad y Datos</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
+      <!--BOTONES PANTALLA GRANDE-->
+      <div class="d-none d-md-flex align-items-center gap-2">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNewPost">
           Crear nuevo post
         </button>
-
-
-        <!--MENÚ DROPDOWN-->
-        <div class="nav-item dropdown ms-2">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
             <i class="fa-solid fa-gear"></i>
           </button>
-
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item">Perfil</a></li>
             <li><a class="dropdown-item">Accesibilidad</a></li>
@@ -48,8 +72,8 @@
             <li><a class="dropdown-item text-danger">Cerrar sesión</a></li>
           </ul>
         </div>
-        </ul>
       </div>
+
     </div>
 
     <!--MODAL-->
@@ -69,7 +93,7 @@
               <i class="fa-solid fa-camera fa-lg me-2 bg-light"></i> <!--CÁMARA ICONO-->
             </button>
             <button type="button" class="btn btn-light g-2">
-              <i class="fa-solid fa-location-dot fa-lg bg-light"></i> <!-- UBI ICONO-->
+              <i class="fa-solid fa-location-dot fa-lg bg-light"></i> <!--UBI ICONO-->
             </button>
 
 
@@ -85,7 +109,7 @@
   </nav>
 
 
-  <!--TABS + JS BEHAVIOUR -->
+  <!--TABS + JS BEHAVIOUR-->
   <div class="container-fluid justify-content-end">
 
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -161,16 +185,98 @@
           <div class="container my-4">
 
             <!--IMAGEN 1-->
-            <div class="card m-4 p-0" >
+            <div class="card m-4 mx-auto p-0" style="width: 35rem;">
               <div class="card-body row">
-                <h5 class="card-title">Escape the city</h5>
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Escape the city</h5>
+                  <p>15/07/24</p>
+                </div>
                 <img
                   src="https://images.unsplash.com/photo-1504600770771-fb03a6961d33?q=80&w=2082&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   class="img-fluid">
-                <p>23 Me gusta</p>
-                <p>Cuadrado 3
+                <p><strong>23 Me gusta </strong></p>
+                <p>Cuadrado 3</p>
               </div>
             </div>
+
+            <!--IMAGEN 2-->
+            <div class="card m-4 mx-auto p-0" style="width: 35rem">
+              <div class="card-body row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Nature order</h5>
+                  <p>09/01/24</p>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1610177498573-78deaa4a797b?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid">
+                <p><strong>31 Me gusta </strong></p>
+                <p>Cuadrado 2</p>
+              </div>
+            </div>
+
+
+            <!--IMAGEN 3-->
+            <div class="card m-4 mx-auto p-0" style="width: 35rem;">
+              <div class="card-body row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Winter Wonderland</h5>
+                  <p>22/12/23</p>
+                </div>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1661331864386-24337aa54ac1?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid">
+                <p><strong>40 Me gusta </strong></p>
+                <p>Cuadrado 1</p>
+              </div>
+            </div>
+
+
+            <!--IMAGEN 4-->
+            <div class="card m-4 mx-auto p-0" style="width: 35rem;">
+              <div class="card-body row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Morrocan</h5>
+                  <p>11/09/23</p>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1584404268984-89c43e841646?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid">
+                <p><strong>15 Me gusta </strong></p>
+                <p>Azulejo 3</p>
+              </div>
+            </div>
+
+
+            <!--IMAGEN 5-->
+            <div class="card m-4 mx-auto p-0" style="width: 35rem;">
+              <div class="card-body row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Arabic</h5>
+                  <p>11/08/23</p>
+                </div>
+                <img src="https://i.etsystatic.com/7478004/r/il/605bc0/449513722/il_570xN.449513722_etey.jpg"
+                  class="img-fluid">
+                <p><strong>54 Me gusta </strong></p>
+                <p>Azulejo 2</p>
+              </div>
+            </div>
+
+
+            <!--IMAGEN 6-->
+            <div class="card m-4 mx-auto p-0" style="width: 35rem;">
+              <div class="card-body row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title">Persian</h5>
+                  <p>21/07/23</p>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1668329992654-8cd596d5d682?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="img-fluid">
+                <p><strong>62 Me gusta </strong></p>
+                <p>Azulejo 1</p>
+              </div>
+            </div>
+
 
           </div>
         </div>
